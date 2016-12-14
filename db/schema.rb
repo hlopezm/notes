@@ -10,6 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20161214195553) do
+
+  create_table "reports", force: :cascade do |t|
+    t.string   "nombre"
+    t.string   "pdte_mpal"
+    t.string   "dip_local"
+    t.string   "dip_federal"
+    t.datetime "renovacion_cdm"
+    t.text     "situacion_municipio"
+    t.text     "situacion_cdm"
+    t.text     "temas_rednion"
+    t.string   "image"
+    t.text     "observaciones"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
 
 end

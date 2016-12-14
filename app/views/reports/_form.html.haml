@@ -1,0 +1,40 @@
+= form_for @report do |f|
+  - if @report.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@report.errors.count, "error")} prohibited this report from being saved:"
+      %ul
+        - @report.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :nombre
+    = f.text_field :nombre
+  .field
+    = f.label :pdte_mpal
+    = f.text_field :pdte_mpal
+  .field
+    = f.label :dip_local
+    = f.text_field :dip_local
+  .field
+    = f.label :dip_federal
+    = f.text_field :dip_federal
+  .field
+    = f.label :renovacion_cdm
+    = f.datetime_select :renovacion_cdm
+  .field
+    = f.label :situacion_municipio
+    = f.text_area :situacion_municipio
+  .field
+    = f.label :situacion_cdm
+    = f.text_area :situacion_cdm
+  .field
+    = f.label :temas_rednion
+    = f.text_area :temas_rednion
+  .field
+    = f.label :image
+    = f.text_field :image
+  .field
+    = f.label :observaciones
+    = f.text_area :observaciones
+  .actions
+    = f.submit 'Save'

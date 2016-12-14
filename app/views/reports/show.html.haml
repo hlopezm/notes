@@ -1,0 +1,36 @@
+%p#notice= notice
+
+%p
+  %b Nombre:
+  = @report.nombre
+%p
+  %b Pdte mpal:
+  = @report.pdte_mpal
+%p
+  %b Dip local:
+  = @report.dip_local
+%p
+  %b Dip federal:
+  = @report.dip_federal
+%p
+  %b Renovacion cdm:
+  = @report.renovacion_cdm
+%p
+  %b Situacion municipio:
+  = @report.situacion_municipio
+%p
+  %b Situacion cdm:
+  = @report.situacion_cdm
+%p
+  %b Temas rednion:
+  = @report.temas_rednion
+%p
+  %b Image:
+  = @report.image
+%p
+  %b Observaciones:
+  = @report.observaciones
+
+= link_to 'Edit', edit_report_path(@report)
+\|
+= link_to 'Back', reports_path

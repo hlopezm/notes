@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  pdte_mpal: MyString
+  dip_local: MyString
+  dip_federal: MyString
+  renovacion_cdm: 2016-12-14 13:55:53
+  situacion_municipio: MyText
+  situacion_cdm: MyText
+  temas_rednion: MyText
+  image: MyString
+  observaciones: MyText
+
+two:
+  nombre: MyString
+  pdte_mpal: MyString
+  dip_local: MyString
+  dip_federal: MyString
+  renovacion_cdm: 2016-12-14 13:55:53
+  situacion_municipio: MyText
+  situacion_cdm: MyText
+  temas_rednion: MyText
+  image: MyString
+  observaciones: MyText

@@ -1,0 +1,2 @@
+json.extract! report, :id, :nombre, :pdte_mpal, :dip_local, :dip_federal, :renovacion_cdm, :situacion_municipio, :situacion_cdm, :temas_rednion, :image, :observaciones, :created_at, :updated_at
+json.url report_url(report, format: :json)

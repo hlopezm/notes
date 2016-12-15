@@ -1,4 +1,4 @@
-= form_for @report do |f|
+= simple_form_for @report do |f|
   - if @report.errors.any?
     #error_explanation
       %h2= "#{pluralize(@report.errors.count, "error")} prohibited this report from being saved:"
@@ -6,35 +6,15 @@
         - @report.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :nombre
-    = f.text_field :nombre
-  .field
-    = f.label :pdte_mpal
-    = f.text_field :pdte_mpal
-  .field
-    = f.label :dip_local
-    = f.text_field :dip_local
-  .field
-    = f.label :dip_federal
-    = f.text_field :dip_federal
-  .field
-    = f.label :renovacion_cdm
-    = f.datetime_select :renovacion_cdm
-  .field
-    = f.label :situacion_municipio
-    = f.text_area :situacion_municipio
-  .field
-    = f.label :situacion_cdm
-    = f.text_area :situacion_cdm
-  .field
-    = f.label :temas_rednion
-    = f.text_area :temas_rednion
-  .field
-    = f.label :image
-    = f.text_field :image
-  .field
-    = f.label :observaciones
-    = f.text_area :observaciones
-  .actions
-    = f.submit 'Save'
+  = f.input :nombre, label: 'Nombre', error: 'Nombre de usuario es obligatorio'
+  = f.input :pdte_mpal, label: 'Presidente Municipal'
+  = f.input :dip_local, label: 'Diputado Local'
+  = f.input :dip_federal, label: 'Diputado Federal'
+  = f.input :renovacion_cdm, as: :date, label: 'Renovación CDM'
+  = f.input :situacion_municipio, as: :text, label: 'Situación Municipio'
+  = f.input :situacion_cdm, as: :text, label: 'Situación CDM'
+  = f.input :temas_rednion, as: :text, label: 'Temas Reunión'
+  %p
+    = f.input :image, as: :file
+  = f.input :observaciones, as: :text, label: 'Observaciones'
+  = f.button :submit, "Guardar", class: "btn btn-primary"

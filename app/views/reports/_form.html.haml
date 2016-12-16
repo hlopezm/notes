@@ -17,4 +17,10 @@
   %p
     = f.input :image, as: :file
   = f.input :observaciones, as: :text, label: 'Observaciones'
+  %br
+  #new-election-form
+    {{message}}
+
+  %br
+
   = f.button :submit, "Guardar", class: "btn btn-primary"

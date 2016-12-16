@@ -7,16 +7,20 @@
       %th Pdte mpal
       %th Dip local
       %th Dip federal
-      %th Renovacion cdm
 
   %tbody
     - @reports.each do |report|
       %tr
-        %td= link_to report.nombre, report
+        %td
+          = link_to report.nombre, report
+          %br
+          \ Renovacion CDM:
+          %br
+            = report.renovacion_cdm.strftime("%d-%m-%Y")
+
         %td= report.pdte_mpal
         %td= report.dip_local
         %td= report.dip_federal
-        %td= report.renovacion_cdm
         %td
           = link_to 'Edit', edit_report_path(report)
           = link_to 'Destroy', report, :method => :delete, :data => { :confirm => 'Are you sure?' }

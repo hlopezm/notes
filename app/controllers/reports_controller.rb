@@ -5,6 +5,10 @@ class ReportsController < ApplicationController
   # GET /reports.json
   def index
     @reports = Report.all
+    respond_to do |format|
+      format.html
+      format.json { render :json => @reports }
+    end
   end
 
   # GET /reports/1

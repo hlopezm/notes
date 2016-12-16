@@ -14,6 +14,7 @@ gem 'hamlit', '~> 2.7', '>= 2.7.5'
 gem 'bootstrap', '~> 4.0.0.alpha5'
 gem 'simple_form', '~> 3.3', '>= 3.3.1'
 gem 'font-awesome-sass', '~> 4.7.0'
+gem 'vuejs-rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'

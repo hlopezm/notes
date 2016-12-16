@@ -7,17 +7,19 @@
           %li= msg
 
   = f.input :nombre, label: 'Nombre', error: 'Nombre de usuario es obligatorio'
+  = f.input :category do
+    = f.select :category_id, Category.all.map { |c| [c.nombre, c.id ] }, {}, { class: "form-control input-lg" }
   = f.input :pdte_mpal, label: 'Presidente Municipal'
   = f.input :dip_local, label: 'Diputado Local'
   = f.input :dip_federal, label: 'Diputado Federal'
-  = f.input :renovacion_cdm, as: :date, label: 'Renovación CDM'
+  = f.input :renovacion_cdm, as: :date, order: [:day, :month, :year]
   = f.input :situacion_municipio, as: :text, label: 'Situación Municipio'
   = f.input :situacion_cdm, as: :text, label: 'Situación CDM'
   = f.input :temas_rednion, as: :text, label: 'Temas Reunión'
-  %p
-    = f.input :image, as: :file
+  = f.input :image, as: :file
   = f.input :observaciones, as: :text, label: 'Observaciones'
   %br
+
   #new-election-form
     {{message}}
 

@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161214195553) do
+ActiveRecord::Schema.define(version: 20161216023601) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "nombre"
+    t.integer  "report_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["report_id"], name: "index_categories_on_report_id"
+  end
 
   create_table "reports", force: :cascade do |t|
     t.string   "nombre"
@@ -23,8 +31,10 @@ ActiveRecord::Schema.define(version: 20161214195553) do
     t.text     "temas_rednion"
     t.string   "image"
     t.text     "observaciones"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.integer  "category_id",         default: 1
+    t.index ["category_id"], name: "index_reports_on_category_id"
   end
 
 end

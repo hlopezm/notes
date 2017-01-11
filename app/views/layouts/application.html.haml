@@ -6,6 +6,8 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}
   %body
+    %p.notice= notice
+    %p.alert= alert
     = render "nav"
     .container
       = yield

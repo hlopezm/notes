@@ -1,12 +1,15 @@
-%nav.navbar.navbar-fixed-top.navbar-dark.bg-inverse.bg-faded
-  %button.navbar-toggler.hidden-lg-up{"aria-controls" => "navbarResponsive", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarResponsive", "data-toggle" => "collapse", :type => "button"}
+%nav.navbar.navbar-toggleable-md.navbar-inverse.fixed-top.bg-inverse
+  %button.navbar-toggler.navbar-toggler-right{"aria-controls" => "navbarCollapse", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarCollapse", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
   %a.navbar-brand{:href => "/"}
     %img.d-inline-block.align-top{:alt => "", :height => "30", :src => "/logopri.svg", :width => "30"}>/
     CDE Hidalgo
-  #navbarResponsive.collapse.navbar-toggleable-md
-    %ul.nav.navbar-nav
+  #navbarCollapse.collapse.navbar-collapse
+    %ul.navbar-nav.mr-auto
       %li.nav-item
-        %a.nav-link{:href => "/cities"} Municipios
+        %a.nav-link{:href => "/"}
+          Municipios
+          %span.sr-only (current)
       %li.nav-item.dropdown
         %span.sr-only (current)
         %a#responsiveNavbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => ""} Distritos
@@ -14,12 +17,12 @@
           %a.dropdown-item{:href => "/locals"} Locales
           %a.dropdown-item{:href => "/federals"} Federales
       %li.nav-item
-        %p
-    %form.form-inline.float-lg-left
-      %input.form-control{:placeholder => "Search", :type => "text"}/
-      %button.btn.btn-outline-success{:type => "submit"} Buscar
+        %a.nav-link.disabled{:href => "#"} Disabled
     %ul.nav.navbar-nav.float-lg-right
       %li.nav-item.nav-link.btn
         = link_to "Log out", root_path, method: :delete
       %li.nav-item.nav-link.btn
         = link_to "Sign In", root_path
+    %form.form-inline.mt-2.mt-md-0
+      %input.form-control.mr-sm-2{:placeholder => "Search", :type => "text"}/
+      %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Search
